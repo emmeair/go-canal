@@ -1,0 +1,14 @@
+{
+  "schema": [
+    "test_tt"
+  ],
+  "mysqlInfo": {
+    "addr": "ip:3306",
+    "user": "canal",
+    "password": "canal"
+  },
+  "server": {
+    "network": "tcp",
+    "addr": "ip:9501"
+  }
+}
