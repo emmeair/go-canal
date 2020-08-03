@@ -14,7 +14,6 @@ func init() {
 	localDb, err = leveldb.OpenFile("source/local/db", nil)
 
 	if err != nil {
-
 		log.Errorln(err.Error())
 		os.Exit(0)
 	}

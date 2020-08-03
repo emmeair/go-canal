@@ -43,15 +43,20 @@ FLUSH PRIVILEGES;
 }
 ```
 
-- 可以自己编译或直接运行项目,代码已通过Travis CI编译测试，如编译失败请提交issue
-```shell
+- 测试 -race不是必须的，选项用于检测数据竞争
+```shell script
+go test -race 
+```
+
+- 代码已通过Travis CI编译测试,可以直接编译或直接运行项目,遇问题请提交issue
+```shell script
 go build canal 
 go run canal
 ```
 
-- 可直接下载执行文件 [release]
+- 可直接下载执行文件 [releases]
 
-[release]: https://github.com/emmeair/go-canal/releases
+[releases]: https://github.com/emmeair/go-canal/releases
 
 ```shell
 直接运行
