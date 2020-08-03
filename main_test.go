@@ -15,7 +15,7 @@ func TestLinkServer(t *testing.T) {
 	conn, err = net.DialTimeout(serverInfo["network"].(string), serverInfo["addr"].(string), 3*time.Second)
 	if err != nil {
 
-		t.Log("连接服务器失败,正在重试...")
+		t.Log("连接服务器失败,正 在重试...")
 	} else {
 
 		t.Log("连接推送服务器成功!!!")
