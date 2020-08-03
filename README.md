@@ -24,6 +24,23 @@ GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'canal'@'%';
 FLUSH PRIVILEGES;
 ```
 # 开始
+- 修改配置文件config.json
+```json5
+{
+  "schema": [//监听订阅的库名
+    "test_tt"
+  ],
+  "mysqlInfo": {//需要使用哪个MySQL用户去订阅mysql-bin
+    "addr": "ip:3306",
+    "user": "canal",
+    "password": "canal"
+  },
+  "server": {//需要推送的tcp连接(需长链接)
+    "network": "tcp",
+    "addr": "ip:9501"
+  }
+}
+```
 
 - 可以自己编译或直接运行项目
 ```shell
