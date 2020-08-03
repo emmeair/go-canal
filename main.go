@@ -168,10 +168,8 @@ func (h *MyEventHandler) OnRow(ev *canal.RowsEvent) error {
 
 				log.Infoln("向服务器推送数据失败")
 				return
-			} else {
-
-				log.Infoln("数据库数据已推送成功")
 			}
+			log.Infoln("数据库数据已推送成功")
 		}
 
 		return

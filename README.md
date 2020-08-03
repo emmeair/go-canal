@@ -1,4 +1,8 @@
 # GO-CANAL
+[![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal)
+[![codebeat badge](https://codebeat.co/badges/6e7ecb75-240a-498e-a73f-8813181b7490)](https://codebeat.co/projects/github-com-emmeair-go-canal-master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/emmeair/go-canal)](https://goreportcard.com/report/github.com/emmeair/go-canal)
+
 简单配置，可将数据库变更记录投递到系统中
 
 # 准备
@@ -20,6 +24,23 @@ GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'canal'@'%';
 FLUSH PRIVILEGES;
 ```
 # 开始
+- 修改配置文件config.json
+```json5
+{
+  "schema": [//监听订阅的库名
+    "test_tt"
+  ],
+  "mysqlInfo": {//需要使用哪个MySQL用户去订阅mysql-bin
+    "addr": "ip:3306",
+    "user": "canal",
+    "password": "canal"
+  },
+  "server": {//需要推送的tcp连接(需长链接)
+    "network": "tcp",
+    "addr": "ip:9501"
+  }
+}
+```
 
 - 可以自己编译或直接运行项目
 ```shell
@@ -27,7 +48,9 @@ go build canal
 go run canal
 ```
 
-- 可直接下载执行文件
+- 可直接下载执行文件 [release]
+
+[release]: https://github.com/emmeair/go-canal/releases
 
 ```shell
 直接运行
