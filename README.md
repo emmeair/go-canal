@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal)
 # GO-CANAL
+[![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal)
+
 简单配置，可将数据库变更记录投递到系统中
 
 # 准备
