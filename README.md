@@ -43,7 +43,7 @@ FLUSH PRIVILEGES;
 }
 ```
 
-- 可以自己编译或直接运行项目
+- 可以自己编译或直接运行项目,代码已通过Travis CI编译测试，如编译失败请提交issue
 ```shell
 go build canal 
 go run canal
