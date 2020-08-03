@@ -32,7 +32,9 @@ go run canal
 ```
 
 - 可直接下载执行文件 [release]
-[release]https://github.com/emmeair/go-canal/releases
+
+[release]: https://github.com/emmeair/go-canal/releases
+
 ```shell
 直接运行
 ./canal 
