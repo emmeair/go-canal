@@ -1,6 +1,5 @@
 # GO-CANAL
 [![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal)
-[![Coverage Status](https://coveralls.io/repos/github/emmeair/go-canal/badge.svg?branch=master)](https://coveralls.io/github/emmeair/go-canal?branch=master)
 [![codebeat badge](https://codebeat.co/badges/6e7ecb75-240a-498e-a73f-8813181b7490)](https://codebeat.co/projects/github-com-emmeair-go-canal-master)
 
 简单配置，可将数据库变更记录投递到系统中
