@@ -84,7 +84,7 @@ func LinkServer() {
 			doRead(conn)
 			if conn != nil {
 
-				conn.Close()
+				_ = conn.Close()
 			}
 		}
 		conn = nil
