@@ -1,5 +1,7 @@
 language : go
 go : master
+service :
+  - mysql
 
 install:
   - go get golang.org/x/tools/cmd/cover

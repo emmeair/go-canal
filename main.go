@@ -30,7 +30,7 @@ func main() {
 	c, err := canal.NewCanal(cfg)
 
 	if err != nil {
-		log.Fatalln(err.Error())
+		log.Debugln(err.Error())
 		return
 	}
 
