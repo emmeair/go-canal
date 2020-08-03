@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal)
 [![codebeat badge](https://codebeat.co/badges/6e7ecb75-240a-498e-a73f-8813181b7490)](https://codebeat.co/projects/github-com-emmeair-go-canal-master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/emmeair/go-canal)](https://goreportcard.com/report/github.com/emmeair/go-canal)
+[![codecov](https://codecov.io/gh/emmeair/go-canal/branch/master/graph/badge.svg)](https://codecov.io/gh/emmeair/go-canal)
 
 简单配置，可将数据库变更记录投递到系统中
 
