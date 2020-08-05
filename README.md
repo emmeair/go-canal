@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal)
 [![codebeat badge](https://codebeat.co/badges/6e7ecb75-240a-498e-a73f-8813181b7490)](https://codebeat.co/projects/github-com-emmeair-go-canal-master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/emmeair/go-canal)](https://goreportcard.com/report/github.com/emmeair/go-canal)
+[![codecov](https://codecov.io/gh/emmeair/go-canal/branch/master/graph/badge.svg)](https://codecov.io/gh/emmeair/go-canal)
 
 简单配置，可将数据库变更记录投递到系统中
 
@@ -24,14 +25,38 @@ GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'canal'@'%';
 FLUSH PRIVILEGES;
 ```
 # 开始
+- 修改配置文件config.json
+```json5
+{
+  "schema": [//监听订阅的库名
+    "test_tt"
+  ],
+  "mysqlInfo": {//需要使用哪个MySQL用户去订阅mysql-bin
+    "addr": "ip:3306",
+    "user": "canal",
+    "password": "canal"
+  },
+  "server": {//需要推送的tcp连接(需长链接)
+    "network": "tcp",
+    "addr": "ip:9501"
+  }
+}
+```
 
-- 可以自己编译或直接运行项目
-```shell
+- 测试 -race不是必须的，选项用于检测数据竞争
+```shell script
+go test -race 
+```
+
+- 代码已通过 [![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal) 测试,可以直接编译或直接运行项目,遇问题请提交issue
+```shell script
 go build canal 
 go run canal
 ```
 
-- 可直接下载执行文件
+- 可直接下载执行文件 [releases]
+
+[releases]: https://github.com/emmeair/go-canal/releases
 
 ```shell
 直接运行
@@ -44,8 +69,19 @@ ps -aux|grep canal
 得到pid后可以直接kill -9 
 ```
 
+- 推送成功消息示例
+
+```json5
+{
+    "Action":"insert",   //行为 insert update delete
+    "ColumnData":{},     //变更后的数据
+    "SchemaName":"test", //库名
+    "TableName":"test"   //表名
+}
+```
+
 # 说明
-- 目前只支持Linux版本且本地需要安装MySQL
+- ~~目前只支持Linux版本且本地需要安装MySQL~~
 - TCP 断线重连默认3秒
 - MySQL 断线重连默认1秒
 
