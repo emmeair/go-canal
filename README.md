@@ -69,6 +69,17 @@ ps -aux|grep canal
 得到pid后可以直接kill -9 
 ```
 
+- 推送成功消息示例
+
+```json5
+{
+    "Action":"insert",   //行为 insert update delete
+    "ColumnData":{},     //变更后的数据
+    "SchemaName":"test", //库名
+    "TableName":"test"   //表名
+}
+```
+
 # 说明
 - ~~目前只支持Linux版本且本地需要安装MySQL~~
 - TCP 断线重连默认3秒
