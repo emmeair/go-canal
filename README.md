@@ -70,7 +70,7 @@ ps -aux|grep canal
 ```
 
 # 说明
-- 目前只支持Linux版本且本地需要安装MySQL
+- ~~目前只支持Linux版本且本地需要安装MySQL~~
 - TCP 断线重连默认3秒
 - MySQL 断线重连默认1秒
 

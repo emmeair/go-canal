@@ -2,9 +2,10 @@ package main
 
 import (
 	"testing"
+	"time"
 )
 
-func Test_main(t *testing.T) {
+func Test_sync(t *testing.T) {
 
-	main()
+	InitSyncFramework(10 * time.Second)
 }
