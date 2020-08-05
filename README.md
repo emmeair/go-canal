@@ -48,7 +48,7 @@ FLUSH PRIVILEGES;
 go test -race 
 ```
 
-- 代码已通过Travis CI编译测试,可以直接编译或直接运行项目,遇问题请提交issue
+- 代码已通过 [![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal) 测试,可以直接编译或直接运行项目,遇问题请提交issue
 ```shell script
 go build canal 
 go run canal
