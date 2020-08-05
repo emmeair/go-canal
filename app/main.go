@@ -37,7 +37,7 @@ func InitSyncFramework() {
 
 	if err != nil {
 
-		log.Fatalln(err.Error())
+		log.Warnln(err.Error())
 		return
 	}
 
