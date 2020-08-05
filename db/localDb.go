@@ -1,4 +1,4 @@
-package main
+package db
 
 import (
 	"github.com/siddontang/go-log/log"
@@ -6,12 +6,12 @@ import (
 	"os"
 )
 
-var localDb *leveldb.DB
+var LocalDb *leveldb.DB
 
 func init() {
 
 	var err error
-	localDb, err = leveldb.OpenFile("source/local/db", nil)
+	LocalDb, err = leveldb.OpenFile("source/local/db", nil)
 
 	if err != nil {
 		log.Errorln(err.Error())
@@ -22,5 +22,5 @@ func init() {
 
 func LocalClose() {
 
-	_ = localDb.Close()
+	_ = LocalDb.Close()
 }

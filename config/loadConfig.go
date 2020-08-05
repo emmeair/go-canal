@@ -1,4 +1,4 @@
-package main
+package config
 
 import (
 	"github.com/fsnotify/fsnotify"
@@ -9,6 +9,7 @@ import (
 
 var SupportSchema []string
 var MysqlInfo map[string]interface{}
+var ServerInfo map[string]interface{}
 
 func init() {
 
@@ -26,6 +27,8 @@ func init() {
 	//读取mysql相关数据
 	MysqlInfo = viper.GetStringMap("mysqlInfo")
 
+	ServerInfo = viper.GetStringMap("server")
+
 	viper.WatchConfig()
 	viper.OnConfigChange(func(in fsnotify.Event) {
 
@@ -33,4 +36,9 @@ func init() {
 		SupportSchema = viper.GetStringSlice("schema")
 		log.Warnln("配置文件进行了更改，如果更改的是连接配置项，请重启服务")
 	})
+}
+
+func GetSupportSchema() []string {
+
+	return SupportSchema
 }
