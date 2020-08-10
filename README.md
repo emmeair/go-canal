@@ -48,7 +48,7 @@ FLUSH PRIVILEGES;
 go test -race 
 ```
 
-- 代码已通过 [![Build Status](https://travis-ci.com/emmeair/go-canal.svg?branch=master)](https://travis-ci.com/emmeair/go-canal) 测试,可以直接编译或直接运行项目,遇问题请提交issue
+- 可以直接编译或直接运行项目,遇问题请提交issue
 ```shell script
 go build canal 
 go run canal
@@ -81,7 +81,7 @@ ps -aux|grep canal
 ```
 
 # 说明
-- ~~目前只支持Linux版本且本地需要安装MySQL~~
+- ~~目前只支持Linux版本且~~ 本地需要安装MySQL
 - TCP 断线重连默认3秒
 - MySQL 断线重连默认1秒
 

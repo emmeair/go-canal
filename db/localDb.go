@@ -9,7 +9,6 @@ import (
 var LocalDb *leveldb.DB
 
 func init() {
-
 	var err error
 	LocalDb, err = leveldb.OpenFile("source/local/db", nil)
 
